@@ -1,0 +1,1481 @@
+/* Estilos do corpo da página */
+body{
+    padding: 0%; /* Remove padding padrão do navegador */
+    margin: 0%; /* Remove margem padrão do navegador */
+    background-color: #000000; /* Cor de fundo preta */
+    background-image: url("pics/background.jpg"); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Fixa a imagem ao fazer scroll */
+    padding-bottom: 60px; /* Espaço inferior para não ocultar conteúdo pelo footer */
+}
+
+/* Estilos do rodapé fixo */
+footer{
+    position: fixed; /* Posiciona o footer fixo na tela */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    width: auto; /* Largura automática conforme conteúdo */
+    padding: 15px 20px; /* Espaçamento interno */
+    color: #ffffff; /* Cor do texto branca */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    z-index: 1; /* Profundidade - fica atrás das boxes */
+    pointer-events: none; /* Permite cliques através do footer */
+}
+
+/* Estilos do parágrafo dentro do footer */
+footer p{
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+/* Estilos do cabeçalho principal */
+header{
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: row; /* Direção horizontal */
+    align-items: flex-start; /* Alinha itens no topo */
+    justify-content: flex-start; /* Alinha itens à esquerda */
+    height: auto; /* Altura automática */
+    padding: 20px; /* Espaçamento interno geral */
+    padding-top: 400px; /* Espaçamento superior grande para posicionar abaixo */
+    text-align: left; /* Alinha texto à esquerda */
+    color: white; /* Cor do texto branca */
+    position: relative; /* Permite posicionamento relativo dos elementos filhos */
+}
+
+header img{
+    display: none; /* Esconde qualquer imagem dentro do header */
+}
+
+header::before{
+    display: none; /* Remove pseudo-elemento ::before do header, se existir */
+}
+
+header::after{
+    display: none; /* Remove pseudo-elemento ::after do header, se existir */
+}
+
+header > *{
+    position: relative; /* Todos os elementos filhos do header ficam relativos para z-index funcionar */
+    z-index: 1; /* Garante que fiquem acima de elementos de fundo */
+}
+
+header h1{
+    color: white; /* Cor do texto branca */
+    margin: 0; /* Remove margens padrão */
+    padding: 8px 0; /* Espaçamento interno vertical */
+    font-size: 5rem; /* Tamanho grande para o título */
+}
+
+header nav{
+    width: auto; /* Largura automática */
+    display: flex; /* Flexbox para organizar itens */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    margin-top: 0; /* Remove margem superior */
+}
+
+header nav ul{
+    list-style-type: none; /* Remove marcadores da lista */
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+    display: flex; /* Usa flexbox para a lista */
+    flex-direction: column; /* Organiza itens em coluna */
+    gap: 10px; /* Espaçamento vertical entre itens */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    border-radius: 0; /* Sem arredondamento */
+    align-items: flex-start; /* Alinha itens à esquerda */
+}
+
+header nav ul li{
+    display: block; /* Cada item ocupa linha inteira */
+    padding: 0; /* Remove padding */
+    color: white; /* Cor do texto branca */
+    font-size: 2rem; /* Tamanho do texto grande */
+}
+
+header nav ul li a{
+    display: inline-block; /* Link se comporta como bloco inline */
+    padding: 12px 18px; /* Espaçamento interno */
+    color: #ffffff; /* Cor do texto */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    border-radius: 6px; /* Cantos arredondados */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 1.6rem; /* Tamanho do texto do link */
+    font-weight: 600; /* Texto seminegrito */
+    transition: background 160ms ease, transform 120ms ease, box-shadow 160ms ease; /* Animação suave para hover e interações */
+    cursor: pointer; /* Cursor de mãozinha ao passar sobre */
+}
+
+/* Botão Sobre Mim - quadrado com ícone */
+header nav ul li a.sobre-mim-btn{
+    display: flex; /* Flexbox para organizar ícone e texto */
+    flex-direction: column; /* Ícone acima do texto */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100px; /* Largura do botão */
+    height: 100px; /* Altura do botão */
+    padding: 10px; /* Espaçamento interno */
+    background: rgba(255,255,255,0.06); /* Fundo semitransparente */
+    border: 1px solid transparent; /* Borda inicial invisível */
+    border-radius: 8px; /* Cantos arredondados */
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+header nav ul li a.sobre-mim-btn .btn-icon{
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: auto; /* Mantém proporção do ícone */
+    max-width: 70px; /* Limite máximo de largura */
+    max-height: 50px; /* Limite máximo de altura */
+    object-fit: contain; /* Mantém proporção sem cortar */
+    display: block; /* Comportamento de bloco */
+    order: 1; /* Ícone aparece primeiro dentro do flex container */
+}
+
+header nav ul li a.sobre-mim-btn span{
+    font-size: 0.9rem; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+    order: 2; /* Texto aparece depois do ícone */
+    white-space: nowrap; /* Não permite quebra de linha */
+}
+
+/* Botão Projetos - quadrado com ícone */
+header nav ul li a.projetos-btn{
+    display: flex; /* Usa flexbox para organizar ícone e texto */
+    flex-direction: column; /* Ícone e texto empilhados verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100px; /* Largura do botão */
+    height: 100px; /* Altura do botão */
+    padding: 10px; /* Espaçamento interno */
+    background: rgba(255,255,255,0.06); /* Fundo semi-transparente */
+    border: 1px solid transparent; /* Borda inicial invisível */
+    border-radius: 8px; /* Arredonda os cantos */
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    gap: 8px; /* Espaçamento entre ícone e texto */
+}
+
+header nav ul li a.projetos-btn .btn-icon{
+    width: 100%; /* Ocupa toda a largura disponível no container flex */
+    height: auto; /* Mantém proporção do ícone */
+    max-width: 70px; /* Limite máximo de largura do ícone */
+    max-height: 50px; /* Limite máximo de altura do ícone */
+    object-fit: contain; /* Mantém proporção sem cortar o ícone */
+    display: block; /* Garante comportamento de bloco */
+    order: 1; /* Ícone aparece primeiro dentro do flex container */
+}
+
+header nav ul li a.projetos-btn span{
+    font-size: 0.9rem; /* Define o tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+    order: 2; /* Texto aparece depois do ícone */
+    white-space: nowrap; /* Impede quebra de linha do texto */
+}
+
+/* Botão Currículo - quadrado com ícone */
+header nav ul li a.curriculo-btn{
+    display: flex; /* Usa flexbox para organizar ícone e texto */
+    flex-direction: column; /* Ícone e texto empilhados verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100px; /* Largura do botão */
+    height: 100px; /* Altura do botão */
+    padding: 10px; /* Espaçamento interno */
+    background: rgba(255,255,255,0.06); /* Fundo semi-transparente */
+    border: 1px solid transparent; /* Borda inicial invisível */
+    border-radius: 8px; /* Arredonda os cantos */
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    gap: 8px; /* Espaçamento entre ícone e texto */
+}
+
+header nav ul li a.curriculo-btn .btn-icon{
+    width: 100%; /* Ocupa toda a largura disponível no container flex */
+    height: auto; /* Mantém proporção do ícone */
+    max-width: 70px; /* Limite máximo de largura do ícone */
+    max-height: 50px; /* Limite máximo de altura do ícone */
+    object-fit: contain; /* Mantém proporção sem cortar o ícone */
+    display: block; /* Garante comportamento de bloco */
+    order: 1; /* Ícone aparece primeiro dentro do flex container */
+}
+
+header nav ul li a.curriculo-btn span{
+    font-size: 0.9rem; /* Define o tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+    order: 2; /* Texto aparece depois do ícone */
+    white-space: nowrap; /* Impede quebra de linha do texto */
+}
+
+/* Botão Contato - quadrado com ícone */
+header nav ul li a.contato-btn{
+    display: flex; /* Usa flexbox para organizar ícone e texto */
+    flex-direction: column; /* Ícone e texto empilhados verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100px; /* Largura do botão */
+    height: 100px; /* Altura do botão */
+    padding: 10px; /* Espaçamento interno */
+    background: rgba(255,255,255,0.06); /* Fundo semi-transparente */
+    border: 1px solid transparent; /* Borda inicial invisível */
+    border-radius: 8px; /* Arredonda os cantos */
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    gap: 8px; /* Espaçamento entre ícone e texto */
+}
+
+/* Ícone dentro do botão */
+header nav ul li a.contato-btn .btn-icon{
+    width: 100%; /* Ocupa toda a largura do container flexível */
+    height: auto; /* Mantém proporção do ícone */
+    max-width: 70px; /* Limite máximo de largura do ícone */
+    max-height: 50px; /* Limite máximo de altura do ícone */
+    object-fit: contain; /* Mantém proporção do conteúdo sem cortar */
+    display: block; /* Garante comportamento de bloco */
+    order: 1; /* Define ordem do ícone no flexbox */
+}
+
+/* Texto dentro do botão */
+header nav ul li a.contato-btn span{
+    font-size: 0.9rem; /* Tamanho da fonte do texto */
+    text-align: center; /* Centraliza texto */
+    order: 2; /* Define ordem do texto abaixo do ícone */
+    white-space: nowrap; /* Impede quebra de linha do texto */
+}
+
+/* Efeitos de hover e focus */
+header nav ul li a:hover,
+header nav ul li a:focus{
+    background: rgba(255,255,255,0.08); /* Fundo um pouco mais claro */
+    transform: translateY(-2px); /* Levanta o botão levemente */
+}
+
+/* Remove a linha separadora entre itens da lista */
+header nav ul li + li::before{
+    display: none;
+}
+
+/* Efeito ao clicar no botão */
+header nav ul li a:active{
+    transform: translateY(0); /* Volta à posição original */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.32); /* Adiciona sombra para efeito de clique */
+}
+
+
+/* Estilos da caixa arrastável (box) - base para todas as boxes */
+.square-box{
+    width: min(900px, 95%); /* Largura máxima de 900px ou 95% da tela */
+    aspect-ratio: 1 / 1; /* Proporção quadrada padrão */
+    margin: 0; /* Remove margens */
+    display: flex; /* Layout flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 16px; /* Espaçamento interno */
+    background: #ffffff; /* Fundo branco */
+    color: #111111; /* Cor do texto escura */
+    border: 2px solid rgba(0,0,0,0.12); /* Borda sutil */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35); /* Sombra para profundidade */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    font-size: 1rem; /* Tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas */
+    text-align: center; /* Texto centralizado */
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+    z-index: 10; /* Profundidade - fica acima de outros elementos */
+    transition: box-shadow 180ms ease, transform 180ms ease, left 220ms cubic-bezier(.2,.9,.3,1), top 220ms cubic-bezier(.2,.9,.3,1); /* Animações suaves */
+    touch-action: none; /* Desabilita gestos de toque padrão para permitir drag */
+    cursor: grab; /* Cursor de "pegar" ao passar o mouse */
+    user-select: none; /* Impede seleção de texto */
+}
+
+/* Garantir que box "Sobre mim" sempre mantém largura correta, minimizada ou não */
+.square-box.sobre-mim-box{
+    width: min(900px, 95%) !important;
+    min-width: min(900px, 95%) !important;
+    max-width: 95% !important;
+    flex-shrink: 0 !important;
+}
+
+/* Estados da box ao ser arrastada */
+.square-box.dragging{
+    transition: none; /* Remove transições durante o arraste para movimento fluido */
+    transform: scale(1.03); /* Aumenta ligeiramente o tamanho ao arrastar */
+    box-shadow: 0 14px 34px rgba(0,0,0,0.5); /* Sombra mais pronunciada durante arraste */
+    cursor: grabbing; /* Cursor muda para "segurando" durante arraste */
+    z-index: 9999; /* Fica acima de todas as outras boxes */
+}
+
+/* Estados da box ao soltar após arraste */
+.square-box.released{
+    transition: left 320ms cubic-bezier(.2,.9,.3,1), top 320ms cubic-bezier(.2,.9,.3,1), transform 220ms ease, box-shadow 220ms ease; /* Animações suaves ao soltar */
+    transform: scale(1); /* Volta ao tamanho normal */
+}
+
+/* Animação de minimizar/maximizar - mostra apenas o header quando minimizada */
+.square-box.minimized{
+    min-height: 0 !important; /* Remove altura mínima */
+    padding: 0 !important; /* Remove padding */
+    overflow: hidden !important; /* Esconde conteúdo que transborde */
+    display: block; /* Muda para display block */
+    align-items: flex-start; /* Alinha ao topo */
+}
+
+.square-box.minimized .box-header{
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    position: relative; /* Define posição relativa para permitir posicionamento interno dos elementos filhos */
+    border-radius: 8px; /* Arredonda os cantos da caixa em 8px */
+    margin: 0; /* Remove margens externas */
+    top: 0; /* Garante que o topo esteja alinhado sem deslocamento */
+    left: 0; /* Alinha à esquerda sem deslocamento */
+    right: 0; /* Alinha à direita sem deslocamento */
+    width: 100%; /* Ocupa toda a largura disponível do elemento pai */
+    border-bottom: none; /* Remove a borda inferior */
+    padding: 10px 14px; /* Espaçamento interno: 10px em cima/baixo e 14px nas laterais */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura total */
+    overflow: visible; /* Permite que conteúdo ultrapasse os limites da caixa se necessário */
+    justify-content: space-between; /* Distribui elementos filhos com espaço entre eles (flexbox) */
+    gap: 8px; /* Espaçamento de 8px entre os elementos filhos */
+    min-width: min(900px, 95%); /* Define largura mínima: o menor valor entre 900px e 95% da tela */
+}
+
+/* Garantir que box "Sobre mim" mantém largura quando minimizada - mesma largura que quando expandida */
+.sobre-mim-box.minimized{
+    width: min(900px, 95%) !important; /* Força largura fixa igual à expandida */
+    min-width: min(900px, 95%) !important; /* Força largura mínima igual à expandida */
+    max-width: 95% !important; /* Limita largura máxima a 95% da tela */
+    flex-shrink: 0 !important; /* Impede que o elemento encolha em layouts flexíveis */
+    aspect-ratio: auto !important; /* Remove proporção fixa, deixando altura/largura automáticas */
+}
+
+.square-box.minimized .box-toggle{
+    flex-shrink: 0; /* Impede que o botão de toggle encolha em layouts flexíveis */
+    margin-left: 8px; /* Adiciona espaço de 8px à esquerda do botão */
+}
+
+
+/* Esconde completamente o conteúdo quando a box está minimizada */
+.square-box.minimized .box-content{
+    width: 0 !important;
+    max-height: 0 !important; /* Altura máxima zero */
+    height: 0 !important; /* Altura zero */
+    padding-top: 0 !important; /* Remove padding superior */
+    padding-bottom: 0 !important; /* Remove padding inferior */
+    padding-left: 0 !important; /* Remove padding esquerdo */
+    padding-right: 0 !important; /* Remove padding direito */
+    margin: 0 !important; /* Remove margens */
+    overflow: hidden !important; /* Esconde overflow */
+    opacity: 0 !important; /* Torna invisível */
+    visibility: hidden !important; /* Remove da árvore de layout */
+    display: none !important; /* Remove do display */
+    transition: max-height 300ms ease, padding 300ms ease, opacity 200ms ease, margin 300ms ease, height 300ms ease; /* Animações suaves */
+}
+
+.square-box.minimized .box-menu-bar{
+    display: none !important; /* Esconde completamente a barra de menu quando minimizada */
+    opacity: 0; /* Torna invisível (transparente) */
+    visibility: hidden; /* Remove visibilidade do elemento */
+    height: 0 !important; /* Força altura zero */
+    max-height: 0 !important; /* Limita altura máxima a zero */
+    padding: 0 !important; /* Remove espaçamento interno */
+    margin: 0 !important; /* Remove margens externas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites */
+    transition: opacity 200ms ease, height 300ms ease; /* Anima suavemente a opacidade e altura ao minimizar */
+}
+
+.square-box.minimized .box-menu-bar-divider{
+    display: none !important; /* Esconde completamente o divisor quando minimizada */
+    opacity: 0; /* Torna invisível (transparente) */
+    visibility: hidden; /* Remove visibilidade do elemento */
+    height: 0 !important; /* Força altura zero */
+}
+
+.square-box.minimized .box-sidebar{
+    display: none !important; /* Esconde completamente a barra lateral quando minimizada */
+    opacity: 0; /* Torna invisível */
+    visibility: hidden; /* Remove visibilidade */
+    height: 0 !important; /* Força altura zero */
+    max-height: 0 !important; /* Limita altura máxima a zero */
+    width: 0 !important; /* Força largura zero */
+    padding: 0 !important; /* Remove espaçamento interno */
+    margin: 0 !important; /* Remove margens externas */
+    overflow: hidden; /* Oculta conteúdo que ultrapasse */
+    transition: opacity 200ms ease, height 300ms ease, width 300ms ease; /* Anima suavemente opacidade, altura e largura */
+}
+
+.square-box:not(.minimized) .box-content{
+    max-height: 400px; /* Define altura máxima do conteúdo expandido */
+    opacity: 1; /* Torna visível */
+    transition: max-height 300ms ease, padding 300ms ease, opacity 300ms ease, margin 300ms ease; /* Anima altura, padding, opacidade e margens ao expandir */
+}
+
+.square-box:not(.minimized) .box-menu-bar{
+    display: flex; /* Exibe a barra de menu como flex container */
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Garante visibilidade */
+    transition: opacity 300ms ease, height 300ms ease; /* Anima suavemente opacidade e altura */
+}
+
+.square-box:not(.minimized) .box-sidebar{
+    display: flex; /* Exibe a barra lateral como flex container */
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Garante visibilidade */
+    transition: opacity 300ms ease, height 300ms ease, width 300ms ease; /* Anima suavemente opacidade, altura e largura */
+}
+
+/* Header da caixa About Me */
+.box-header{
+    position: absolute; /* Posiciona o header de forma absoluta dentro da caixa */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    display: flex; /* Usa flexbox para organizar os elementos internos */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    justify-content: space-between; /* Distribui itens com espaço entre eles */
+    padding: 10px 14px; /* Espaçamento interno: 10px em cima/baixo e 14px nas laterais */
+    background: #1e3a5f; /* Define cor de fundo azul escuro */
+    border-radius: 6px 6px 0 0; /* Arredonda apenas os cantos superiores */
+    border-bottom: 2px solid rgba(255,255,255,0.1); /* Linha inferior semi-transparente */
+    cursor: grab; /* Mostra cursor de "arrastar" ao passar por cima */
+    z-index: 100; /* Garante que o header fique acima do conteúdo */
+}
+
+
+/* Menu bar dentro da box */
+.box-menu-bar{
+    position: absolute; /* Posiciona o elemento de forma absoluta dentro do contêiner pai */
+    top: 48px; /* Distância de 48px do topo do contêiner pai */
+    left: 0; /* Encosta no lado esquerdo */
+    right: 0; /* Ocupa até o lado direito (faz o elemento esticar horizontalmente) */
+    display: flex; /* Usa layout flexível para organizar os itens em linha */
+    gap: 15px; /* Espaçamento de 15px entre os itens internos */
+    padding: 3px 8px; /* Espaçamento interno: 3px em cima/baixo e 8px nas laterais */
+    background: rgba(220, 220, 220, 1) !important; /* Fundo cinza sólido e opaco para não deixar ver conteúdo atrás */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Linha inferior branca bem transparente */
+    font-size: 0.7rem; /* Tamanho de fonte pequeno */
+    color: #000000; /* Texto preto */
+    z-index: 5; /* Coloca o elemento acima de outros com z-index menor */
+    height: 20px; /* Altura fixa de 20px */
+}
+
+.box-menu-bar span{
+    cursor: pointer; /* Cursor muda para “mãozinha” ao passar por cima */
+    padding: 2px 6px; /* Espaçamento interno mínimo para tornar clicável */
+    border-radius: 3px; /* Cantos levemente arredondados */
+    transition: background 150ms ease, color 150ms ease; /* Anima suavemente bg e cor */
+    font-size: 0.7rem; /* Mantém o texto pequeno */
+}
+
+.box-menu-bar span:hover{
+    background: rgba(255,255,255,0.1); /* Fundo muda ao passar o mouse */
+    color: #000000; /* Mantém o texto preto no hover */
+}
+
+/* Divisor entre as barras de menu na box Contato */
+.box-menu-bar-divider{
+    position: absolute; /* Posiciona o elemento de forma absoluta dentro do contêiner pai */
+    top: 68px; /* Distância de 68px do topo (48px header + 20px primeira barra) */
+    left: 0; /* Encosta no lado esquerdo */
+    right: 0; /* Ocupa até o lado direito */
+    height: 1px; /* Altura de 1px para criar uma linha */
+    background: #808080; /* Cor cinzenta escura */
+    z-index: 5; /* Coloca o elemento acima de outros com z-index menor */
+}
+
+/* Segunda barra de menu na box Contato */
+.contato-second-bar{
+    top: 69px !important; /* Posiciona logo abaixo do divisor (68px + 1px) */
+    justify-content: space-between; /* Distribui os itens: "Enviar Mensagem" à esquerda e LinkedIn à direita */
+    height: 48px !important; /* Altura ainda maior para a segunda barra */
+    padding: 10px 16px !important; /* Padding maior para acomodar elementos maiores */
+    align-items: center; /* Centraliza verticalmente os elementos */
+}
+
+/* Wrapper para "Enviar Mensagem" com ícone */
+.enviar-mensagem-wrapper{
+    display: flex; /* Usa layout flexível para organizar ícone e texto em linha */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+    gap: 10px; /* Espaçamento de 10px entre o ícone e o texto */
+    font-size: 1.2rem !important; /* Texto ainda maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+.enviar-mensagem-wrapper span{
+    font-size: 1.2rem !important; /* Texto ainda maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+/* Ícone de enviar email */
+.enviar-email-icon{
+    width: 24px; /* Largura ainda maior do ícone */
+    height: 24px; /* Altura ainda maior do ícone */
+    object-fit: contain; /* Mantém proporção do ícone */
+}
+
+/* Link do LinkedIn na segunda barra */
+.contato-linkedin-link{
+    display: flex; /* Usa layout flexível para organizar ícone e texto em linha */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+    gap: 10px; /* Espaçamento de 10px entre o ícone e o texto */
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #000000; /* Texto preto */
+    padding: 6px 12px; /* Espaçamento interno maior para tornar clicável */
+    border-radius: 3px; /* Cantos levemente arredondados */
+    transition: background 150ms ease, color 150ms ease; /* Anima suavemente bg e cor */
+    font-size: 1.1rem; /* Texto maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+.contato-linkedin-link span{
+    font-size: 1.1rem; /* Texto maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+.contato-linkedin-link:hover{
+    background: rgba(255,255,255,0.1); /* Fundo muda ao passar o mouse */
+    color: #000000; /* Mantém o texto preto no hover */
+}
+
+/* Ícone do LinkedIn */
+.linkedin-icon{
+    width: 24px; /* Largura ainda maior do ícone */
+    height: 24px; /* Altura ainda maior do ícone */
+    object-fit: contain; /* Mantém proporção do ícone */
+}
+
+/* Segunda barra de menu na box Currículo */
+.curriculo-second-bar{
+    top: 69px !important; /* Posiciona logo abaixo do divisor (68px + 1px) */
+    justify-content: flex-start; /* Alinha à esquerda */
+    height: 48px !important; /* Altura ainda maior para a segunda barra */
+    padding: 10px 16px !important; /* Padding maior para acomodar elementos maiores */
+    align-items: center; /* Centraliza verticalmente os elementos */
+}
+
+/* Link de download do currículo */
+.curriculo-download-link{
+    display: flex; /* Usa layout flexível para organizar ícone e texto em linha */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+    gap: 10px; /* Espaçamento de 10px entre o ícone e o texto */
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #000000; /* Texto preto */
+    padding: 6px 12px; /* Espaçamento interno maior para tornar clicável */
+    border-radius: 3px; /* Cantos levemente arredondados */
+    transition: background 150ms ease, color 150ms ease; /* Anima suavemente bg e cor */
+    font-size: 1.2rem; /* Texto maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+.curriculo-download-link span{
+    font-size: 1.2rem; /* Texto maior */
+    font-weight: 600; /* Texto mais grosso */
+}
+
+.curriculo-download-link:hover{
+    background: rgba(255,255,255,0.1); /* Fundo muda ao passar o mouse */
+    color: #000000; /* Mantém o texto preto no hover */
+}
+
+/* Ícone de download */
+.download-icon{
+    width: 24px; /* Largura do ícone */
+    height: 24px; /* Altura do ícone */
+    object-fit: contain; /* Mantém proporção do ícone */
+}
+
+/* Ajuste do padding do conteúdo da box Currículo para acomodar a segunda barra */
+.curriculo-box .box-content{
+    padding-top: 140px !important; /* Padding superior maior para dar espaço após as duas barras */
+}
+
+
+/* Barra lateral vertical */
+.box-sidebar{
+    position: absolute; /* Fixada dentro do contêiner pai */
+    top: 75px; /* Começa 75px abaixo do topo */
+    left: 0; /* Encosta totalmente na esquerda */
+    width: 200px; /* Largura fixa da sidebar */
+    bottom: 0; /* Estende até a parte inferior */
+    background: #4a90e2; /* Cor de fundo azul */
+    z-index: 4; /* Fica abaixo da menu bar (que tem z-index 5) */
+    display: flex; /* Permite organizar os elementos verticalmente */
+    flex-direction: column; /* Coloca os itens empilhados em coluna */
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    padding: 10px 0; /* Espaçamento vertical interno */
+    gap: 10px; /* Espaçamento entre os blocos internos */
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo ultrapassar o espaço */
+}
+
+/* Sidebar da box Projetos - cor preta */
+.projetos-sidebar{
+    background: #000000 !important; /* Cor de fundo preta */
+    padding: 15px 10px; /* Padding interno */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+/* Itens de projeto na sidebar */
+.projeto-item{
+    display: flex; /* Usa layout flexível para organizar ícone e texto */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+    gap: 10px; /* Espaçamento de 10px entre o ícone e o texto */
+    padding: 10px 8px; /* Padding interno para tornar clicável */
+    color: #808080; /* Cor cinzenta para o texto */
+    font-size: 0.9rem; /* Tamanho de fonte */
+    cursor: pointer; /* Cursor muda para "mãozinha" ao passar por cima */
+    transition: background 150ms ease, color 150ms ease; /* Anima suavemente bg e cor */
+    border-radius: 4px; /* Cantos levemente arredondados */
+}
+
+.projeto-item:hover{
+    background: rgba(255, 255, 255, 0.1); /* Fundo levemente claro no hover */
+    color: #b0b0b0; /* Cor cinzenta mais clara no hover */
+    width: 160px;
+}
+
+/* Ícone dos itens de projeto */
+.projeto-icon{
+    width: 18px; /* Largura do ícone */
+    height: 18px; /* Altura do ícone */
+    object-fit: contain; /* Mantém proporção do ícone */
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+.sidebar-top,
+.sidebar-middle,
+.sidebar-bottom{
+    width: calc(100% - 16px); /* 100% da largura da sidebar menos 16px */
+    min-height: 100px; /* Altura mínima de 100px */
+    height: auto; /* Altura ajusta automaticamente ao conteúdo */
+    background: rgba(255,255,255,0.2); /* Fundo branco semitransparente */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin: 0 8px; /* Espaço à esquerda e direita */
+    flex-shrink: 0; /* Impede que os itens encolham quando faltar espaço */
+    display: flex; /* Permite organizar conteúdo interno facilmente */
+    flex-direction: column; /* Conteúdo interno disposto em colunas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o elemento */
+    transition: height 200ms ease, min-height 200ms ease; /* Anima mudanças de altura */
+}
+/* Imagem do gato no fundo da sidebar da box Projetos */
+.peeking-cat-image{
+    position: absolute; /* Posiciona absolutamente dentro da sidebar */
+    bottom: 1px; /* Coloca no fundo da sidebar com pequeno espaçamento */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-55%); /* Ajusta para centralizar perfeitamente */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+    max-width: 220px; /* Largura máxima para não ultrapassar a sidebar */
+    max-height: 230px; /* Altura máxima */
+    z-index: 1; /* Fica acima do fundo mas abaixo dos itens (que têm z-index maior) */
+    opacity: 0.8; /* Levemente transparente para não competir com os itens */
+}
+
+
+.sidebar-header{
+    width: 100%; /* Ocupa toda a largura do bloco pai */
+    height: 24px; /* Altura fixa de 24px para o cabeçalho da seção */
+    background: #1e3a5f; /* Fundo azul escuro */
+    flex-shrink: 0; /* Impede que o cabeçalho diminua ao contrair o container */
+    display: flex; /* Usa flexbox para organizar o conteúdo internamente */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    justify-content: space-between; /* Um item fica à esquerda e outro à direita */
+    color: #ffffff; /* Texto branco */
+    font-size: 0.75rem; /* Texto um pouco pequeno */
+    font-weight: 600; /* Peso da fonte mais forte (semi-bold) */
+    padding: 0 8px; /* Espaço interno horizontal */
+    box-sizing: border-box; /* Inclui padding dentro do tamanho total */
+}
+
+.sidebar-header span{
+    color: #ffffff; /* Garante que spans no header sejam sempre brancos */
+}
+
+.sidebar-toggle{
+    background: transparent; /* Sem fundo por padrão */
+    border: none; /* Remove bordas */
+    color: #ffffff; /* Ícone branco */
+    font-size: 1rem; /* Tamanho do ícone/botão */
+    font-weight: bold; /* Ícone mais forte */
+    cursor: pointer; /* Cursor de clique */
+    padding: 0; /* Remove padding padrão */
+    width: 20px; /* Área clicável horizontal */
+    height: 20px; /* Área clicável vertical */
+    display: flex; /* Permite centralizar o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: transform 150ms ease; /* Animação suave para rotação */
+}
+
+.sidebar-toggle:hover{
+    background: rgba(255,255,255,0.1); /* Fundo semi-transparente no hover */
+    border-radius: 3px; /* Bordas arredondadas ao passar o mouse */
+}
+
+/* Rotaciona o ícone quando o bloco estiver recolhido */
+.sidebar-top.collapsed .sidebar-header .sidebar-toggle,
+.sidebar-middle.collapsed .sidebar-header .sidebar-toggle,
+.sidebar-bottom.collapsed .sidebar-header .sidebar-toggle{
+    transform: rotate(180deg); /* Rotaciona o ícone para indicar expansão */
+}
+
+/* Quando a seção estiver recolhida */
+.sidebar-top.collapsed,
+.sidebar-middle.collapsed,
+.sidebar-bottom.collapsed{
+    height: 24px !important; /* Reduz altura para apenas o header */
+    min-height: 24px !important; /* Mantém a altura mínima */
+    max-height: 24px !important; /* Impede expansão */
+    overflow: hidden !important; /* Oculta qualquer conteúdo extra */
+}
+
+/* Esconde completamente o conteúdo interno ao recolher */
+.sidebar-top.collapsed .sidebar-content,
+.sidebar-middle.collapsed .sidebar-content,
+.sidebar-bottom.collapsed .sidebar-content{
+    display: none !important; /* Some do layout */
+    opacity: 0 !important; /* Invisível */
+    visibility: hidden !important; /* Não visível */
+    height: 0 !important; /* Sem altura */
+    max-height: 0 !important; /* Não cresce */
+    padding: 0 !important; /* Remove espaçamentos */
+    margin: 0 !important; /* Remove margens */
+    overflow: hidden !important; /* Impede rolagem */
+    pointer-events: none !important; /* Evita cliques no conteúdo escondido */
+}
+
+/* Quando NÃO está recolhido, mostra o conteúdo */
+.sidebar-top:not(.collapsed) .sidebar-content,
+.sidebar-middle:not(.collapsed) .sidebar-content,
+.sidebar-bottom:not(.collapsed) .sidebar-content{
+    display: flex; /* Mostra o conteúdo normalmente */
+    opacity: 1; /* Totalmente visível */
+    visibility: visible; /* Visível no layout */
+}
+
+.sidebar-content{
+    padding: 8px; /* Espaçamento interno para separar os itens das bordas */
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante dentro da seção */
+    display: flex; /* Organiza os itens usando flexbox */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    gap: 6px; /* Espaço entre os itens internos */
+    align-items: flex-start; /* Alinha todos os itens no início do eixo horizontal */
+    transition: opacity 200ms ease, visibility 200ms ease; /* Anima suavemente visibilidade e opacidade */
+}
+
+.sidebar-link{
+    color: #ffffff; /* Texto branco */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    font-size: 0.8rem; /* Tamanho de fonte pequeno */
+    padding: 4px 8px; /* Espaço interno para tornar o clique confortável */
+    border-radius: 3px; /* Cantos levemente arredondados */
+    transition: background 150ms ease; /* Animação suave ao mudar o fundo */
+    display: flex; /* Permite ícone + texto alinhados */
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    gap: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+.sidebar-link-icon{
+    width: 16px; /* Define largura do ícone */
+    height: 16px; /* Define altura do ícone */
+    object-fit: contain; /* Ajusta a imagem sem distorcer */
+}
+
+.sidebar-link:hover{
+    background: rgba(255,255,255,0.1); /* Fundo leve ao passar o mouse */
+    text-decoration: underline; /* Sobrescreve e mostra sublinhado no hover */
+}
+
+.sidebar-item{
+    color: #ffffff; /* Texto branco */
+    font-size: 0.8rem; /* Tamanho pequeno */
+    padding: 4px 8px; /* Espaçamento interno */
+    border-radius: 3px; /* Cantos arredondados */
+    display: flex; /* Usa flexbox para alinhamento horizontal */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    gap: 8px; /* Espaço entre ícone e texto */
+}
+
+.sidebar-item-icon{
+    width: 16px; /* Largura do ícone */
+    height: 16px; /* Altura do ícone */
+    object-fit: contain; /* Mantém proporções do ícone sem distorcer */
+}
+
+.sidebar-top.collapsed .sidebar-content,
+.sidebar-middle.collapsed .sidebar-content,
+.sidebar-bottom.collapsed .sidebar-content{
+    display: none; /* Quando a seção está recolhida, o conteúdo some do layout (não ocupa espaço) */
+}
+
+
+.box-title-wrapper{
+    display: flex; /* Organiza o ícone + título na horizontal */
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    gap: 8px; /* Espaço entre o ícone e o título */
+}
+
+.box-title-icon{
+    width: 20px; /* Largura do ícone */
+    height: 20px; /* Altura do ícone */
+    object-fit: contain; /* Mantém proporção sem cortar ou distorcer */
+}
+
+.box-header .box-title{
+    color: #ffffff; /* Título em branco */
+    font-size: 0.85rem; /* Tamanho da fonte */
+    font-weight: 600; /* Semibold */
+    letter-spacing: 0.5px; /* Leve espaçamento entre letras */
+    text-transform: uppercase; /* Converte o texto do título para maiúsculas */
+}
+
+.box-buttons{
+    display: flex; /* Alinha botões na horizontal */
+    gap: 6px; /* Espaço entre os botões */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.box-toggle{
+    width: 28px; /* Largura do botão de toggle */
+    height: 28px; /* Altura do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 4px; /* Cantos arredondados */
+    background: rgba(255,255,255,0.1); /* Fundo branco semitransparente */
+    color: #ffffff; /* Cor do ícone/texto dentro do botão */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    font-weight: bold; /* Ícone mais espesso */
+    cursor: pointer; /* Mostra mãozinha no hover */
+    display: flex; /* Permite centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: background 150ms ease, transform 150ms ease; /* Anima fundo e transformações */
+    position: relative; /* Permite usar z-index */
+    z-index: 10; /* Mantém o botão acima de outros elementos */
+    pointer-events: auto; /* Garante que o botão esteja clicável mesmo dentro de elementos sobrepostos */
+    flex-shrink: 0; /* Impede o botão de encolher quando faltar espaço */
+}
+
+.box-fullscreen{
+    width: 28px; /* Largura do botão fullscreen */
+    height: 28px; /* Altura do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+    background: rgba(255,255,255,0.1); /* Fundo branco levemente transparente */
+    color: #ffffff; /* Ícone/texto branco */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    font-weight: bold; /* Más grosso/forte */
+    cursor: pointer; /* Cursor de clique */
+    display: flex; /* Permite centralizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: background 150ms ease, transform 150ms ease; /* Anima cor do fundo e transformações */
+    position: relative; /* Permite uso de z-index */
+    z-index: 10; /* Mantém botão acima de outros elementos */
+    pointer-events: auto; /* Garante que clique funcione mesmo em overlays */
+    flex-shrink: 0; /* Impede botão de encolher */
+}
+
+.square-box.sobre-mim-box.fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    min-width: 0 !important; /* remove restrição mínima */
+    flex-shrink: 0 !important;
+}
+
+.box-fullscreen:hover{
+    background: rgba(255,255,255,0.2); /* Fica mais claro no hover */
+    transform: scale(1.05); /* Cresce levemente */
+}
+
+.box-fullscreen:active{
+    transform: scale(0.95); /* Diminui quando clicado */
+}
+
+.box-close{
+    width: 28px; /* Largura do botão fechar */
+    height: 28px; /* Altura */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Cantos arredondados */
+    background: rgba(255,255,255,0.1); /* Fundo padrão */
+    color: #ffffff; /* Ícone branco */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    font-weight: bold; /* Ícone mais forte */
+    cursor: pointer; /* Cursor de clique */
+    display: flex; /* Centralização interna */
+    align-items: center; /* Centro vertical */
+    justify-content: center; /* Centro horizontal */
+    transition: background 150ms ease, transform 150ms ease; /* Animação suave */
+    position: relative; /* Suporte ao z-index */
+    z-index: 10; /* Acima de outros elementos */
+    pointer-events: auto; /* Clicável */
+    flex-shrink: 0; /* Evita encolhimento */
+}
+
+.box-close:hover{
+    background: rgba(255,0,0,0.3); /* Destaque vermelho ao passar o mouse */
+    transform: scale(1.05); /* Cresce levemente */
+}
+
+.box-close:active{
+    transform: scale(0.95); /* Encolhe ao clicar */
+}
+
+/* Fullscreen mode */
+.square-box.fullscreen{
+    position: fixed !important; /* Fixa na tela inteira */
+    top: 0 !important; /* Colado no topo */
+    left: 0 !important; /* Colado à esquerda */
+    right: 0 !important; /* Colado à direita */
+    bottom: 0 !important; /* Colado ao fundo */
+    width: 100vw !important; /* Largura total da viewport */
+    height: 100vh !important; /* Altura total da viewport */
+    max-width: 100vw !important; /* Impede limite lateral */
+    max-height: 100vh !important; /* Impede limite vertical */
+    margin: 0 !important; /* Remove margens */
+    z-index: 99999 !important; /* Fica acima de tudo */
+    border-radius: 0 !important; /* Remove bordas arredondadas */
+    transform: none !important; /* Remove quaisquer transformações */
+}
+
+.square-box.fullscreen .box-content{
+    max-height: calc(100vh - 60px) !important; /* Conteúdo ocupa a tela menos o header */
+    overflow-y: auto; /* Habilita scroll interno */
+}
+
+/* Prevenir drag quando está em fullscreen */
+.square-box.fullscreen{
+    cursor: default !important; /* Cursor padrão */
+}
+
+.square-box.fullscreen .box-header{
+    cursor: default !important; /* Header também não pode ser arrastado */
+}
+
+.toggle-inner{
+    font-size: 1rem; /* Tamanho da fonte para ícone interno */
+    transition: transform 200ms ease; /* Suaviza rotação ou transformações */
+}
+
+.box-toggle:hover{
+    background: rgba(255,255,255,0.2); /* Fundo mais claro ao passar o mouse */
+    transform: scale(1.05); /* Cresce levemente */
+}
+
+.box-toggle:active{
+    transform: scale(0.95); /* Diminui levemente ao clicar */
+}
+
+/* Conteúdo da caixa */
+.box-content{
+    padding: 90px 20px 20px 24px; /* Grande padding superior (por causa do header) + laterais */
+    text-align: left; /* Alinha texto à esquerda */
+    overflow-y: auto; /* Habilita scroll vertical */
+    overflow-x: hidden; /* Impede que conteúdo ultrapasse horizontalmente */
+    max-height: none; /* Sem limite máximo por padrão */
+    min-height: 550px; /* Garante altura mínima do conteúdo */
+    position: relative; /* Permite posicionamento relativo para elementos filhos */
+    z-index: 1; /* Fica abaixo do header */
+}
+
+.box-content p{
+    margin: 0; /* Remove margens padrões */
+    font-size: 0.95rem; /* Tamanho confortável de leitura */
+    line-height: 1.6; /* Espaçamento de linha mais legível */
+    color: #333; /* Cinza escuro para texto */
+}
+
+/* Estilos específicos para o conteúdo da box Contato */
+.contato-box .box-content{
+    padding-top: 140px !important; /* Padding superior maior para dar espaço após as duas barras (48px header + 20px primeira barra + 1px divisor + 48px segunda barra + espaço extra) */
+    font-size: 1.1rem; /* Texto maior no conteúdo */
+    min-height: 140px; /* Altura mínima reduzida do conteúdo */
+}
+
+.contato-box .box-content p{
+    font-size: 1.1rem; /* Texto maior nos parágrafos */
+    margin-bottom: 12px; /* Espaçamento entre parágrafos */
+}
+
+.contato-box .box-content input,
+.contato-box .box-content textarea{
+    font-size: 1.05rem; /* Texto maior nos inputs */
+    padding: 8px; /* Padding nos inputs */
+    margin-left: 8px; /* Espaçamento à esquerda */
+    width: calc(100% - 100px); /* Largura adaptativa */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+.contato-box .box-content textarea{
+    min-height: 120px; /* Altura mínima para textarea */
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Estilos específicos para a box Projetos */
+/* Fundo preto que ocupa toda a largura da box abaixo da barra cinzenta */
+.projetos-box::after{
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Posiciona absolutamente dentro do container */
+    top: 68px; /* Começa abaixo da barra cinzenta (48px header + 20px menu bar) */
+    left: 0; /* Começa da esquerda da box */
+    right: 0; /* Ocupa até a direita da box */
+    bottom: 0; /* Estende até o fundo */
+    background: #000000 !important; /* Fundo preto */
+    z-index: 1; /* Fica abaixo do conteúdo mas acima de outros elementos */
+}
+
+.projetos-box .box-content{
+    background: transparent !important; /* Remove fundo do box-content para não interferir com o pseudo-elemento */
+    color: #ffffff !important; /* Texto branco */
+    padding-left: 220px !important; /* Padding esquerdo maior para acomodar sidebar preta e divisor */
+    padding-right: 20px !important; /* Padding direito */
+    padding-top: 20px !important; /* Padding superior */
+    padding-bottom: 20px !important; /* Padding inferior */
+    position: relative; /* Permite que fique acima do pseudo-elemento */
+    z-index: 2; /* Fica acima do fundo preto */
+}
+
+.projetos-box .box-content p,
+.projetos-box .box-content h2,
+.projetos-box .box-content h1,
+.projetos-box .box-content h3,
+.projetos-box .box-content h4,
+.projetos-box .box-content h5,
+.projetos-box .box-content h6{
+    color: #ffffff !important; /* Texto branco para todos os títulos e parágrafos */
+}
+
+/* Container do item de projeto */
+.projeto-item-container{
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Organiza elementos verticalmente */
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: 2px; /* Espaçamento reduzido entre elementos para aproximar "Pitch" e "Projeto Pessoal" */
+    padding: 0; /* Remove todo o padding */
+    margin: 0; /* Remove todas as margens */
+    margin-top: 70px; /* Move para cima no layout */
+    margin-left: -210px; /* Move mais para a esquerda (compensa o padding-left do box-content) */
+    cursor: pointer; /* Cursor de mão para indicar que é clicável */
+    transition: transform 150ms ease, opacity 150ms ease; /* Animação suave */
+    width: fit-content; /* Largura ajustada ao conteúdo */
+    position: relative; /* Permite posicionamento e z-index */
+    z-index: 10; /* Fica acima da sidebar preta (que tem z-index 4) */
+}
+
+/* Efeito hover no botão do projeto */
+.projeto-botao:hover{
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+    opacity: 0.9; /* Levemente transparente */
+}
+
+.projeto-botao:active{
+    transform: scale(0.98); /* Diminui ligeiramente ao clicar */
+}
+
+/* Imagem do projeto - pequena e no canto superior esquerdo */
+.projeto-imagem{
+    max-width: 120px; /* Tamanho pequeno */
+    height: auto; /* Mantém proporção */
+    width: auto; /* Largura automática */
+    border-radius: 4px; /* Cantos levemente arredondados */
+    align-self: left; /* Alinha à esquerda */
+}
+
+/* Título do projeto */
+.projeto-titulo{
+    color: #ffffff !important; /* Texto branco */
+    font-size: 1.8rem; /* Tamanho médio */
+    font-weight: 600; /* Texto semibold */
+    margin: 0; /* Remove margens */
+}
+
+/* Box preta modal do Pitch - usa estilos padrão das boxes */
+.pitch-modal-box{
+    position: fixed; /* Posição fixa na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente - será removido ao arrastar */
+    width: min(900px, 95%); /* Largura maior */
+    min-height: 650px; /* Altura mínima maior */
+    max-height: 90vh; /* Altura máxima para não ultrapassar a tela */
+    background: #000000 !important; /* Fundo preto */
+    color: #ffffff !important; /* Texto branco */
+    z-index: 100000 !important; /* Fica acima de tudo */
+    aspect-ratio: auto !important; /* Remove proporção fixa */
+    cursor: grab !important; /* Cursor de arrastar */
+    touch-action: none !important; /* Permite drag em mobile */
+    user-select: none !important; /* Impede seleção de texto */
+}
+
+/* Header da box Pitch - fundo preto */
+.pitch-modal-box .box-header{
+    background: #1e3a5f !important; /* Mesma cor do header das outras boxes */
+}
+
+/* Menu bar da box Pitch */
+.pitch-modal-box .box-menu-bar{
+    background: rgba(220, 220, 220, 1) !important; /* Mesma cor da menu bar */
+}
+
+/* Conteúdo da box Pitch */
+.pitch-modal-box .box-content{
+    background: #000000 !important; /* Fundo preto */
+    color: #ffffff !important; /* Texto branco */
+    padding: 30px !important; /* Padding adequado */
+    overflow-y: auto; /* Permite scroll se necessário */
+    max-height: calc(90vh - 120px); /* Altura máxima considerando header e menu bar */
+    margin-top: 40px;
+}
+
+.pitch-modal-box .box-content p{
+    color: #ffffff !important; /* Texto branco */
+    font-size: 1.1rem; /* Tamanho confortável */
+    margin-bottom: 16px; /* Espaçamento entre parágrafos */
+    line-height: 1.6; /* Altura de linha confortável */
+}
+
+.pitch-modal-box .box-content p:last-child{
+    margin-bottom: 0; /* Remove margem do último parágrafo */
+}
+
+
+/* Barra divisória cinzenta escura entre sidebar e conteúdo na box Projetos */
+.projetos-box::before{
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Posiciona absolutamente dentro do container */
+    top: 75px; /* Começa abaixo da menu bar (48px header + 20px menu bar + alguns px) */
+    left: 200px; /* Posiciona à direita da sidebar preta (200px de largura) */
+    width: 2px; /* Largura de 2px para criar uma linha vertical */
+    bottom: 0; /* Estende até o fundo */
+    background: #808080; /* Cor cinzenta escura */
+    z-index: 5; /* Fica acima da sidebar e do conteúdo */
+}
+
+/* Layout centralizado: mantém tamanho das boxes e aproxima as laterais sem transform */
+#square-box{
+    display: flex; /* Organiza as boxes em flexbox */
+    flex-direction: column; /* Empilha verticalmente */
+    justify-content: flex-start; /* Começa no topo */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 30px; /* Espaço entre as boxes */
+    padding: 30px; /* Espaçamento interno */
+    margin-top: -600px; /* Move o container para cima (ajuste visual) */
+    position: relative; /* Permite posicionamentos absolutos internos */
+}
+  /* Área interna principal do conteúdo */
+  .sobre-content{
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Layout flexível */
+    align-items: flex-start; /* Alinha conteúdo no topo */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre elementos internos */
+    flex: 1; /* Expande para ocupar espaço disponível */
+    overflow: visible; /* Conteúdo pode ultrapassar limites */
+    position: relative; /* Suporte para posicionamento interno */
+    min-height: 400px; /* Altura mínima da seção de conteúdo */
+  }
+  
+
+/* Garantir que headers minimizados ficam visíveis mesmo quando conteúdo está escondido */
+.sobre-content .square-box.minimized{
+    overflow: visible !important; /* Permite que o header apareça mesmo com conteúdo colapsado */
+    height: auto !important; /* Ajusta a altura automaticamente */
+  }
+  
+  /* Box EU - agora independente, posicionada à esquerda */
+  .boxes-row .square-box:not(.sobre-mim-box):not(.projetos-box):not(.curriculo-box):not(.contato-box){
+    width: min(360px, 90%); /* Tamanho fixo até 360px, responsivo até 90% */
+    flex-shrink: 0; /* Impede encolhimento */
+    margin-right: auto; /* Empurra para o lado esquerdo */
+  }
+  
+  /* Boxes Projetos, Currículo, Contato e Sobre Mim - escondidas inicialmente */
+  .boxes-row .projetos-box,
+  .boxes-row .curriculo-box,
+  .boxes-row .contato-box,
+  .boxes-row .sobre-mim-box{
+    display: none; /* Ocultas ao carregar a página */
+  }
+  
+  /* Mostrar boxes quando visíveis (classe controlada por JS) */
+  .boxes-row .projetos-box.visible,
+  .boxes-row .curriculo-box.visible,
+  .boxes-row .contato-box.visible,
+  .boxes-row .sobre-mim-box.visible{
+    display: flex; /* Retorna para exibição normal */
+  }
+  
+  /* Box PROJETOS - tamanho aumentado */
+  .boxes-row .projetos-box{
+    width: min(900px, 95%); /* Largura maior e responsiva */
+    aspect-ratio: auto; /* Sem proporção fixa */
+    min-height: 600px; /* Altura mínima grande */
+    height: auto; /* Ajusta conforme conteúdo */
+    flex-shrink: 0; /* Não encolhe */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+  }
+  
+  /* Box CURRÍCULO - tamanho ligeiramente maior que o PDF (545px) */
+  .boxes-row .curriculo-box{
+    width: min(600px, 95%); /* Largura ligeiramente maior que o PDF (545px) */
+    aspect-ratio: auto; /* Sem proporção fixa */
+    min-height: 600px; /* Altura mínima ligeiramente maior que o PDF (545px) */
+    height: auto; /* Ajusta ao conteúdo */
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Box CONTATO - igual ao currículo */
+  .boxes-row .contato-box{
+    width: min(500px, 70%); /* Largura média */
+    aspect-ratio: auto;
+    min-height: 140px; /* Altura mínima reduzida */
+    height: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Box SOBRE MIM - maior horizontalmente e centralizada */
+  .sobre-mim-box,
+  .boxes-row .sobre-mim-box{
+    width: min(900px, 95%) !important; /* Largura grande e responsiva */
+    min-width: min(900px, 95%) !important; /* Evita encolher demais */
+    max-width: 95% !important; /* Limite de largura */
+    aspect-ratio: auto; /* Sem proporção fixa */
+    min-height: 250px; /* Altura mínima */
+    height: auto;
+    flex-shrink: 0 !important; /* Nunca encolhe */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+    margin-top: -200px; /* Move para cima no layout */
+    cursor: grab; /* Cursor de arrastar */
+    touch-action: none; /* Impede gestos padrão em mobile */
+  }
+  
+  /* Padding interno da box SOBRE MIM */
+  .boxes-row .sobre-mim-box .box-content{
+      padding: 60px 30px 30px 220px; /* Grande padding esquerdo para acomodar imagem */
+      overflow-x: hidden; /* Impede que conteúdo ultrapasse horizontalmente */
+      overflow-y: auto; /* Permite scroll vertical */
+      position: relative; /* Permite posicionamento relativo */
+      z-index: 1; /* Fica abaixo do header */
+  }
+  
+  /* Garantir que vídeos e imagens na box sobre-mim não ultrapassem o topo */
+  .sobre-mim-box .box-content video,
+  .sobre-mim-box .box-content img{
+      position: relative; /* Garante que respeitam os limites do container */
+      z-index: 1; /* Fica abaixo do header */
+      max-width: 100%; /* Impede que ultrapassem a largura do container */
+  }
+  
+  /* Container do vídeo - garantir que não ultrapasse o topo */
+  .sobre-mim-box .box-content > div{
+      position: relative; /* Garante que respeitam os limites do container */
+      z-index: 1; /* Fica abaixo do header */
+  }
+  
+  /* Retângulo azul atrás de cada percurso académico */
+  .percurso-academico-item{
+      background: #5A94DD; /* Mesma cor azul da barra */
+      border-radius: 12px; /* arredonda os cantos dos retângulos */
+      padding: 0; /* Remove padding para o header ocupar toda a largura */
+      margin-bottom: 15px; /* Espaçamento entre itens */
+      color: #ffffff; /* Texto branco para contraste */
+      overflow: hidden; /* Garante que o header não ultrapasse os cantos arredondados */
+  }
+  
+  /* Padding interno para o conteúdo (exceto o header) */
+  .percurso-academico-item > p{
+      padding: 0 20px 15px 20px; /* Padding lateral e inferior */
+  }
+  
+  .percurso-academico-item p{
+      color: #ffffff !important; /* Garante que o texto seja branco */
+      margin-bottom: 8px; /* Espaçamento entre parágrafos */
+  }
+  
+  .percurso-academico-item p:last-child{
+      margin-bottom: 0; /* Remove margem do último parágrafo */
+  }
+  
+  /* Retângulo azul atrás de cada experiência profissional - mesmo estilo dos percursos académicos */
+  .experiencia-profissional-item{
+      background: #5A94DD; /* Mesma cor azul da barra */
+      border-radius: 12px; /* arredonda os cantos dos retângulos */
+      padding: 0; /* Remove padding para o header ocupar toda a largura */
+      margin-bottom: 15px; /* Espaçamento entre itens */
+      color: #ffffff; /* Texto branco para contraste */
+      overflow: hidden; /* Garante que o header não ultrapasse os cantos arredondados */
+      height: 320px; /* Altura fixa do retângulo */
+  }
+  
+  /* Padding interno para o conteúdo (exceto o header) */
+  .experiencia-profissional-item > p,
+  .experiencia-profissional-item > ul{
+      padding: 0 20px 15px 20px; /* Padding lateral e inferior */
+  }
+  
+  .experiencia-profissional-item p{
+      color: #ffffff !important; /* Garante que o texto seja branco */
+      margin-bottom: 8px; /* Espaçamento entre parágrafos */
+  }
+  
+  .experiencia-profissional-item p:last-child{
+      margin-bottom: 0; /* Remove margem do último parágrafo */
+  }
+  
+  .experiencia-profissional-item ul{
+      color: #ffffff !important; /* Texto branco para a lista */
+      margin: 0; /* Remove margens padrão */
+      padding-left: 20px; /* Espaçamento da lista */
+  }
+  
+  .experiencia-profissional-item li{
+      color: #ffffff !important; /* Texto branco para os itens da lista */
+      margin-bottom: 4px; /* Espaçamento entre itens */
+  }
+  
+  /* Header azul escuro dentro dos retângulos azuis claros */
+  .instituicao-header{
+      background: #1e3a5f; /* Cor do header da box "Sobre mim" */
+      border-radius: 12px 12px 0 0; /* Arredonda apenas os cantos superiores */
+      padding: 15px 20px; /* Espaçamento interno */
+      display: flex; /* Layout flex para alinhar elementos */
+      align-items: center; /* Alinha verticalmente */
+      gap: 15px; /* Espaçamento entre elementos */
+      margin: 0; /* Remove margens */
+      width: 100%; /* Ocupa toda a largura do container pai */
+      box-sizing: border-box; /* Inclui padding no cálculo da largura */
+  }
+  
+  /* Título dentro do header */
+  .instituicao-titulo{
+      color: #ffffff !important; /* Texto branco para contraste */
+      margin: 0; /* Remove margens */
+  }
+  
+  /* Container da introdução com imagem e texto */
+  .sobre-mim-intro{
+    display: flex; /* Layout flexível */
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    margin-bottom: 20px; /* Espaço abaixo */
+    margin-top: 30px; /* Espaço acima */
+  }
+  
+  /* Foto na box Sobre Mim */
+  .sobre-mim-foto{
+    width: 200px; /* Largura da imagem */
+    height: auto; /* Mantém proporção */
+    border-radius: 8px; /* Cantos arredondados */
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    object-fit: cover; /* Ajusta a imagem mantendo proporção */
+  }
+  
+  /* Container do texto na introdução */
+  .sobre-mim-texto{
+    flex: 1; /* Ocupa o espaço restante */
+  }
+  
+  /* Ajustes de texto interno */
+  .boxes-row .sobre-mim-box .box-content p{
+    margin-bottom: 16px; /* Espaço entre parágrafos */
+    line-height: 1.8; /* Altura de linha mais confortável */
+  }
+  
+  .boxes-row .sobre-mim-box .box-content h1{
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 2rem; /* Título grande */
+  }
+  
+  .sobre-mim-texto h1{
+    margin-top: 0; /* Remove margem superior do título */
+  }
+  
+
+  /* ------------------------------------------------------ */
+  /* Responsividade para ecrãs com largura até 900px        */
+  /* ------------------------------------------------------ */
+@media (max-width: 900px){
+    #square-box{
+          flex-direction: column;        /* As colunas empilham-se */
+          gap: 18px !important;          /* Espaçamento entre elas */
+          align-items: center;           /* Centraliza o conjunto */
+    }
+  
+      /* Todas as colunas viram largura total */
+    #square-box .left-column,
+    #square-box .center-column,
+    #square-box .right-column{
+          flex: 0 1 100% !important;     /* Ocupar 100% da largura */
+          margin: 0 !important;          /* Remove margens laterais */
+          transform: none !important;    /* Remove ajustes de posição */
+      }
+      
+      /* Conteúdo SOBRE reorganiza-se verticalmente */
+      .sobre-content{
+          flex-direction: column;
+          align-items: center;           /* Centraliza caixas internas */
+      }
+      
+      /* Boxes principais ficam largura total */
+      .eu-box,
+      .sobre-mim-box{
+          width: 100% !important;
+          max-width: 100% !important;
+      }
+  }
+  
+  /* ------------------------- */
+  /* Textos internos das boxes */
+  /* ------------------------- */
+  
+  /* Estilo de títulos h2 dentro das boxes */
+.box-content h2 {
+      margin-top: 0;           /* Remove margem superior */
+      margin-bottom: 12px;     /* Espaço inferior */
+}
+
+  /* Remove estilos padrão das listas */
+.box-content ul {
+      list-style: none;        /* Remove os marcadores */
+      padding: 0;              /* Remove espaçamento interno */
+      margin: 0;               /* Remove margens */
+}
+
+  /* Estilo de cada item da lista */
+.box-content li {
+      padding: 6px 0;          /* Espaçamento vertical */
+      font-size: 0.95rem;      /* Leitura confortável */
+  }
+ 
+/* Container principal do conteúdo dos projetos */
+.projetos-content{
+    padding: 20px;                  /* Espaçamento interno em todos os lados */
+    display: flex;                  /* Usa layout flexível */
+    align-items: flex-start;        /* Alinha itens ao topo verticalmente */
+    justify-content: flex-start;    /* Alinha itens à esquerda horizontalmente */
+    flex: 1;                        /* Ocupa espaço disponível do container pai */
+    overflow: auto;                 /* Permite scroll se o conteúdo ultrapassar a área */
+    position: relative;             /* Posição relativa para posicionamento interno */
+    min-height: 400px;              /* Altura mínima para manter layout consistente */
+}
+
+/* Box interna que contém os projetos individuais */
+.projetos-inner-box{
+    width: 100%;                     /* Ocupa toda a largura do container pai */
+    max-width: 1200px;               /* Limita a largura máxima */
+    margin: 0;                        /* Remove margens externas */
+    position: relative;              /* Posição relativa para elementos filhos */
+}
+
+
+/* Header das boxes internas de projetos */
+.projetos-container .projetos-inner-box .box-header{
+    cursor: grab;                    /* Permite arrastar clicando no header */
+}
